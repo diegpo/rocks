@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>ROCK IA</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>ROCK IA 🤖</h1>
+
+<div id="chat-box"></div>
+
+<input type="text" id="input" placeholder="Digite sua pergunta...">
+<button onclick="enviar()">Enviar</button>
+
+<script>
+async function enviar() {
+    const input = document.getElementById("input").value;
+
+    const response = await fetch("/chat", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({message: input})
+    });
+
+    const data = await response.json();
+
+    document.getElementById("chat-box").innerHTML +=
+        `<p><b>Você:</b> ${input}</p>
+         <p><b>IA:</b> ${data.response}</p>`;
+}
+</script>
+
+</body>
+</html>
