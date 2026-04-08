@@ -25,29 +25,7 @@ Prerequisites:
 - Ollama running locally (ollama serve)
 - Slack account with Bot Token and Signing Secret
 
-Installation and Running:
-1. Clone the repository:
-   git clone https://github.com/yourusername/yourproject.git
-   cd yourproject
 
-2. Create and activate a virtual environment:
-   python -m venv venv
-   source venv/bin/activate  # Linux/macOS
-   venv\Scripts\activate     # Windows
-
-3. Install dependencies:
-   pip install -r requirements.txt
-
-4. Configure the .env file with your credentials:
-   SLACK_SIGNING_SECRET=your_secret
-   SLACK_BOT_TOKEN=your_token
-   OLLAMA_URL=http://localhost:11434
-
-5. Run the Flask server:
-   python app.py
-
-6. Open your browser at:
-   http://localhost:5000
 
 Project Structure:
 ROCKS/
